@@ -1,19 +1,27 @@
 // Create a function that creates the divs in the HTML rather than manually creating them.
-const canvas = document.querySelector('.canvas');
+let canvas = document.querySelector('.canvas');
 const boxTotal = (canvas.clientHeight * canvas.clientWidth) / 100;
 
 function createBox() {
   var newBox = document.createElement('div');
   newBox.className = 'box';
-  newBox.innerHTML = '';
+  newBox.backgroundColor = '';
   canvas.appendChild(newBox);
+}
+
+function paintBoxRed () {
+  let box = event.target;
+  box.style.backgroundColor = 'red';
+
 }
 
 document.addEventListener('DOMContentLoaded', function() {
   for (let i = 0; i < boxTotal; i++) {
     createBox();
   }
+canvas.addEventListener('click', paintBoxRed);
 });
+
 
 
 //Use event.target to act on the div the user has clicked on, and call the mouse actions
