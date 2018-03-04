@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+html body {
+  height: 100%;
+  width: 100%;
+}
+
+.canvas {
+  height: 720px;
+  width: 960px;
+
+}
+.box {
+  border: solid #E7E7E7 1px;
+  float: left;
+  width: 10px;
+  height: 10px;
+}
+
+/* palette colors will have a circular border radius. */
