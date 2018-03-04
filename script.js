@@ -1,17 +1,24 @@
 // Create a function that creates the divs in the HTML rather than manually creating them.
 let canvas = document.querySelector('.canvas');
+let palette = document.querySelector('.palette');
+let brushColor;
 const boxTotal = (canvas.clientHeight * canvas.clientWidth) / 100;
 
 function createBox() {
-  var newBox = document.createElement('div');
+  let newBox = document.createElement('div');
   newBox.className = 'box';
-  newBox.backgroundColor = '';
   canvas.appendChild(newBox);
 }
 
-function paintBoxRed () {
+function pickColor() {
+  let selectedColor = event.target;
+  let color = window.getComputedStyle(selectedColor,null).getPropertyValue("background-color");
+  brushColor = color;
+}
+
+function paintBox () {
   let box = event.target;
-  box.style.backgroundColor = 'red';
+  box.style.backgroundColor = brushColor;
 
 }
 
@@ -19,7 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
   for (let i = 0; i < boxTotal; i++) {
     createBox();
   }
-canvas.addEventListener('click', paintBoxRed);
+  palette.addEventListener('click', pickColor);
+  canvas.addEventListener('click', paintBox);
+
 });
 
 

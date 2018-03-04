@@ -19,4 +19,35 @@ html body {
   height: 10px;
 }
 
+.palette {
+  margin-top: 5px;
+}
+.paletteColor {
+  border: solid #E7E7E7 2px;
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  radius: 15px;
+  float: left;
+}
+
+/* Palette Colors */
+.black {
+  background-color: rgb(0,0,0);
+}
+.white {
+  background-color: white;
+}
+.blue {
+  background-color: blue;
+}
+.green {
+  background-color: green;
+}
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
 /* palette colors will have a circular border radius. */
