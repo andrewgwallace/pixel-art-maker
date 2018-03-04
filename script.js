@@ -11,9 +11,11 @@ function createBox() {
 }
 
 function pickColor() {
-  let selectedColor = event.target;
-  let color = window.getComputedStyle(selectedColor,null).getPropertyValue("background-color");
+  let activeColorBox = document.querySelector('.activeColor');
+  let paletteColor = event.target;
+  let color = window.getComputedStyle(paletteColor,null).getPropertyValue("background-color");
   brushColor = color;
+  activeColorBox.style.backgroundColor = color;
 }
 
 function paintBox () {
